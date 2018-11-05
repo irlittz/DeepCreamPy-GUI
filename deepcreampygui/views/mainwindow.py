@@ -84,4 +84,5 @@ class MainWindow(QMainWindow):
         # Taken straight from the original ui.py
         decensorer = decensor.Decensor()
         decensor.is_mosaic = self.ui.mosaic.isChecked()
-        decensorer.decensor_image(original.convert('RGB'), colored.convert('RGB'), output_path)
+        # For some reason it has to be the colored image twice?
+        decensorer.decensor_image(colored.convert('RGB'), colored.convert('RGB'), output_path)
